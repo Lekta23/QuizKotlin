@@ -29,6 +29,12 @@ internal fun QuestionsScreen(questions: List<Question>) {
   ) {
     QuestionCard(questions[questionProgress])
     AnswerOptions(questions[questionProgress].answers, chooseAnswer) { chooseAnswer = it }
+    Text(
+      modifier = Modifier.padding(top = 20.dp),
+      text = "Score: $score",
+      fontSize = 25.sp,
+      textAlign = TextAlign.Center
+    )
     ActionButtons(questions, questionProgress, chooseAnswer, score, { questionProgress = it }, { score = it })
   }
 }

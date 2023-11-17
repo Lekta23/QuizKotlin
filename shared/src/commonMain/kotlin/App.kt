@@ -26,11 +26,11 @@ fun App() {
       // myCV()
       // ScoreScreen("10/20")
       QuestionsScreen(listOf(
-        Question(1, "Android is a great platform ?", 1, listOf(Answer(1, "YES"), Answer(2, "NO"))),
-        Question(2, "Kotlin is a great language ?", 1, listOf(Answer(1, "YES"), Answer(2, "NO"))),
-        Question(3, "Compose is a great UI toolkit ?", 1, listOf(Answer(1, "YES"), Answer(2, "NO"))),
-        Question(4, "KMM is a great technology ?", 1, listOf(Answer(1, "YES"), Answer(2, "NO"))),
-        Question(5, "Jetpack is a great library ?", 1, listOf(Answer(1, "YES"), Answer(2, "NO"))),
+        Question(1, "What is the capital of France ?", 1, listOf(Answer(1, "Paris"), Answer(2, "London"))),
+        Question(2, "What is the capital of England ?", 1, listOf(Answer(1, "London"), Answer(2, "Paris"))),
+        Question(3, "What is the capital of Spain ?", 2, listOf(Answer(1, "Paris"), Answer(2, "Madrid"))),
+        Question(4, "What is the capital of Italy ?", 1, listOf(Answer(1, "Rome"), Answer(2, "Paris"))),
+        Question(5, "What is the capital of Germany ?", 2, listOf(Answer(1, "Paris"), Answer(2, "Berlin"))),
       ))
 
     }
