@@ -7,16 +7,20 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
 import androidx.compose.material.Card
+import androidx.compose.material.Icon
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable()
-internal fun welcomeScreen(){
+internal fun ScoreScreen(score : String){
   Box(
     contentAlignment = Alignment.Center,
     modifier = Modifier.fillMaxWidth().fillMaxHeight().background(color = Color.DarkGray)
@@ -24,26 +28,29 @@ internal fun welcomeScreen(){
     Card(
       shape = RoundedCornerShape(8.dp),
       modifier = Modifier.padding(10.dp),
+      backgroundColor = Color.Green
     ) {
       Column(horizontalAlignment = Alignment.CenterHorizontally) {
 
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
           Text(
-            text = "Quiz",
-            fontSize = 30.sp,
-            modifier = Modifier.padding(all = 10.dp)
+            text = "Score",
+            fontSize = 15.sp,
           )
           Text(
             modifier = Modifier.padding(all = 10.dp),
-            text = "A simple Quiz to discovers KMP and compose.",
+            text = "$score",
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold
           )
           Button(
             modifier = Modifier.padding(all = 10.dp),
             onClick = {  }
 
           ) {
-            Text("Start the Quiz")
+            Icon(Icons.Filled.Refresh, contentDescription = "Localized description")
+            Text(text = "Retake the Quiz",)
           }
         }
       }
