@@ -16,10 +16,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
-import network.Question
+import moe.tlaster.precompose.navigation.Navigator
 
 @Composable
-internal fun ActionButtons(questions: List<Question>, questionProgress: Int, chooseAnswer: Int, score: Int, onNextQuestion: (Int) -> Unit, onScore: (Int) -> Unit) {
+internal fun ActionButtons(navigator: Navigator, questions: List<Question>, questionProgress: Int, chooseAnswer: Int, score: Int, onNextQuestion: (Int) -> Unit, onScore: (Int) -> Unit) {
   Column(
     modifier = Modifier.fillMaxHeight(),
     horizontalAlignment = Alignment.CenterHorizontally,
@@ -36,10 +36,11 @@ internal fun ActionButtons(questions: List<Question>, questionProgress: Int, cho
         }
       }
     ) {
-      if (questionProgress < questions.size - 1) {
+      if (questionProgress < questions.size) {
         actionButton(Icons.Filled.ArrowForward, "Next")
       } else {
         actionButton(Icons.Filled.Done, "Finish")
+        navigator.navigate("/score/$score out of ${questions.size}")
       }
     }
     LinearProgressIndicator(

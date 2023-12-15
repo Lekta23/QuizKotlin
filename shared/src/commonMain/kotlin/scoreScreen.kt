@@ -18,9 +18,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import moe.tlaster.precompose.navigation.Navigator
 
 @Composable()
-internal fun ScoreScreen(score : String){
+internal fun ScoreScreen(navigator: Navigator, score: String){
   Box(
     contentAlignment = Alignment.Center,
     modifier = Modifier.fillMaxWidth().fillMaxHeight().background(color = Color.DarkGray)
@@ -45,12 +46,13 @@ internal fun ScoreScreen(score : String){
             fontWeight = FontWeight.Bold
           )
           Button(
-            modifier = Modifier.padding(all = 10.dp),
-            onClick = {  }
-
+            modifier = Modifier.padding(all = 20.dp),
+            onClick = {
+              navigator.navigate(route = "/quiz")
+            }
           ) {
             Icon(Icons.Filled.Refresh, contentDescription = "Localized description")
-            Text(text = "Retake the Quiz",)
+            Text(text = "Retake the Quizz",)
           }
         }
       }

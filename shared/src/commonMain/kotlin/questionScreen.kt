@@ -1,23 +1,16 @@
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.selection.selectableGroup
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.Done
 import androidx.compose.runtime.*
 import androidx.compose.ui.*
 import androidx.compose.ui.graphics.*
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import network.Answer
-import network.Question
+import moe.tlaster.precompose.navigation.Navigator
 
 @Composable
-internal fun QuestionsScreen(questions: List<Question>) {
+internal fun QuestionsScreen(navigator: Navigator, questions: List<Question>) {
   var questionProgress by remember { mutableStateOf(0) }
   var chooseAnswer by remember { mutableStateOf(1) }
   var score by remember { mutableStateOf(0) }
@@ -35,6 +28,6 @@ internal fun QuestionsScreen(questions: List<Question>) {
       fontSize = 25.sp,
       textAlign = TextAlign.Center
     )
-    ActionButtons(questions, questionProgress, chooseAnswer, score, { questionProgress = it }, { score = it })
+    ActionButtons(navigator, questions, questionProgress, chooseAnswer, score, { questionProgress = it }, { score = it })
   }
 }

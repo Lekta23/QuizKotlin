@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import network.Answer
+import network.data.Answer
 
 @Composable
 internal fun AnswerOptions(answers: List<Answer>, chooseAnswer: Int, onAnswerSelected: (Int) -> Unit) {
